@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Tienda de Licores</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-body">
+  <header class="menu">
+    <h1>Tienda de Licores</h1>
+    <nav>
+      <ul>
+        <li class="nav-item"><a href="dashboard.html">Inicio</a></li>
+        <li class="nav-item"><a href="catalogo.html">Catálogo</a></li>
+        <li class="nav-item"><a href="inventario.html">Inventario</a></li>
+        <li class="nav-item"><a href="movimientos.html">Movimientos</a></li>
+        <li class="nav-item"><a href="reportes.html">Reportes</a></li>
+        <li class="nav-item"><a href="login.html">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="carousel">
+      <div class="carousel-container">
+        <div class="carousel-item">
+          <img src="img/licores.avif" alt="">
+          <div class="carousel-text">Descubre los licores mas populares</div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/vinos.webp" alt="">
+          <div  class="carousel-text">Cosecha de vinos seleccionados</div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/cervezas.jpg" alt="">
+          <div class="carousel-text">Descubre las mejores cervezas</div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/gaseosas.jpg" alt="">
+          <div class="carousel-text">Acompaña con las mejores gaseosas</div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/pipocas.jpg" alt="">
+          <div class="carousel-text">Los mejores snaks para tu diversion</div>
+        </div>
+      </div>
+      <button class="carousel-button prev">
+        <img src="img/chevron-back-outline.svg" alt="Anterior" width="24" height="24">
+      </button>
+
+      <button class="carousel-button next">
+        <img src="img/chevron-forward-outline.svg" alt="Siguiente" width="24" height="24">
+      </button>
+    </section>
+
+    <!-- Bienvenida -->
+    <section class="bienvenida">
+      <h2>Bienvenidos</h2>
+      <p>Gestiona tu tienda de licores y revisa el catálogo disponible.</p>
+    </section>
+
+    <!-- Catálogo de productos -->
+    <section class="catalogo">
+      <h2>Los productos de la semana</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="img/vodkakiwi.webp" alt="Licor 1">
+          <h3 id="whisky">Vodka Kiwi Ice 51</h3>
+          <p>Botella  275 ml</p>
+        </div>
+        <div class="producto">
+          <img src="img/ginebra.webp" alt="Licor 2">
+          <h3 id="ron">Ginebra Clasico Puerto de Indias</h3>
+          <p>Botella 75 Cl</p>
+        </div>
+        <div class="producto">
+          <img src="img/Fernet-Branca-1-Lt-1-409.webp" alt="Licor 3">
+          <h3 id="vodka">Fernet Branca</h3>
+          <p>Botella 1 Lt</p>
+        </div>
+        <div class="producto">
+          <img src="img/ron.webp" alt="Licor 4">
+          <h3 id="tequila">Ron Flor de Caña 5 años</h3>
+          <p>Botella 1 Lt</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-contenedor">
+      
+      <!-- Columna 1: Descarga la app -->
+      <div class="footer-col">
+        
+        <h4>Síguenos en redes sociales</h4>
+        <div class="social-icons">
+          <a href="#"><img src="img/logo-facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="img/logo-instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="img/logo-youtube.svg" alt="YouTube"></a>
+          <a href="#"><img src="img/logo-tiktok.svg" alt="TikTok"></a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Sobre nosotros -->
+      <div class="footer-col">
+        <h4>Sobre nosotros</h4>
+        <ul>
+          <li><a href="#">Quiénes somos</a></li>
+          <li><a href="#">Proveedores</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Registrate</a></li>
+          <li><a href="#">Inicia Sesion</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- Columna 3: Contáctanos -->
+      <div class="footer-col">
+        <h4>Contáctanos</h4>
+        <p><strong>Teléfono sucursal:</strong> +59169052657</p>
+        <p><strong>Consultas:</strong> atencionalcliente@tuempresa.com</p>
+        <p><strong>Atención al cliente:</strong> +59176311374</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 - Tienda de Licores</p>
+    </div>
+  </footer>
+  <script>
+  const container = document.querySelector('.carousel-container');
+  const item = container.querySelectorAll('.carousel-item');
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+  let index = 0;
+    function showSlide(i) {
+      container.style.transform = `translateX(-${index * 100}%)`;
+    }
+    prevButton.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : item.length - 1;
+      showSlide(index);
+    });
+    nextButton.addEventListener('click', () => {
+      index = (index < item.length - 1) ? index + 1 : 0;
+      showSlide(index);
+    });
+
+  </script>
+  <script src="menuhamburguesa.js"></script>
+</body>
+</html>
