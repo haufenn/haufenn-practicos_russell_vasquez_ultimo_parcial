@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimientos</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+ <header class="menu">
+    <h1>Tienda de Licores</h1>
+    <nav>
+      <ul>
+        <li class="nav-item"><a href="dashboard.html">Inicio</a></li>
+        <li class="nav-item"><a href="catalogo.html">Catálogo</a></li>
+        <li class="nav-item"><a href="inventario.html">Inventario</a></li>
+        <li class="nav-item"><a href="movimientos.html">Movimientos</a></li>
+        <li class="nav-item"><a href="reportes.html">Reportes</a></li>
+        <li class="nav-item"><a href="login.html">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Registrar Movimiento</h2>
+    <form class="form-movimiento">
+      <select required>
+        <option>Whisky Escocés</option>
+        <option>Cerveza Rubia</option>
+        <!-- productos cargados dinámicamente -->
+      </select>
+      <select required>
+        <option value="entrada">Entrada</option>
+        <option value="salida">Salida</option>
+        <option value="ajuste">Ajuste</option>
+      </select>
+      <input type="number" placeholder="Cantidad" required>
+      <input type="date" required>
+      <button type="submit">Registrar</button>
+    </form>
+
+    <h2>Movimientos de Inventario</h2>
+    <form class="form-filtro">
+      <select>
+        <option value="">Todos</option>
+        <option value="entrada">Entradas</option>
+        <option value="salida">Salidas</option>
+        <option value="ajuste">Ajustes</option>
+      </select>
+      <input type="date">
+      <button type="submit">Filtrar</button>
+    </form>
+
+    <table class="tabla-movimientos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Producto</th>
+          <th>Tipo</th>
+          <th>Cantidad</th>
+          <th>Fecha</th>
+          <th>Usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se llenará con los movimientos -->
+      </tbody>
+    </table>
+  </main>
+    <script>
+  // Registrar Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('Service Worker registrado:', registration);
+        })
+        .catch(error => {
+          console.log('Error al registrar Service Worker:', error);
+        });
+    });
+  }
+</script>
+</body>
+</html>

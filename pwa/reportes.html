@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Tienda de Licores</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body class="dashboard-body">
+  <header>
+    <h1>Tienda de Licores</h1>
+    <nav>
+      <ul>
+        <li class="nav-item"><a href="dashboard.html">Inicio</a></li>
+        <li class="nav-item"><a href="catalogo.html">Catálogo</a></li>
+        <li class="nav-item"><a href="inventario.html">Inventario</a></li>
+        <li class="nav-item"><a href="movimientos.html">Movimientos</a></li>
+        <li class="nav-item"><a href="reportes.html">Reportes</a></li>
+        <li class="nav-item"><a href="login.html">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <h2>Reportes</h2>
+  <!-- Reporte de stock bajo -->
+  <section class="reporte">
+    <h3>Productos con stock bajo</h3>
+    <ul>
+      <li>Vodka Premium - Stock: 2</li>
+      <li>Cerveza Rubia - Stock: 5</li>
+    </ul>
+  </section>
+
+  <!-- Reporte de ventas -->
+  <section class="reporte">
+    <h3>Ventas por departamento</h3>
+    <table class="tabla-reportes">
+      <thead>
+        <tr>
+          <th>Departamento</th>
+          <th>Ventas (Bs)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Licores</td>
+          <td>1200</td>
+        </tr>
+        <tr>
+          <td>Cervezas</td>
+          <td>800</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+<footer class="footer">
+  <div class="footer-contenedor">
+    
+    <!-- Columna 1: Descarga la app -->
+    <div class="footer-col">
+      
+      <h4>Síguenos en redes sociales</h4>
+      <div class="social-icons">
+        <a href="#"><img src="img/logo-facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="img/logo-instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="img/logo-youtube.svg" alt="YouTube"></a>
+        <a href="#"><img src="img/logo-tiktok.svg" alt="TikTok"></a>
+      </div>
+    </div>
+
+    <!-- Columna 2: Sobre nosotros -->
+    <div class="footer-col">
+      <h4>Sobre nosotros</h4>
+      <ul>
+        <li><a href="#">Quiénes somos</a></li>
+        <li><a href="#">Responsabilidad Social</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+        <li><a href="#">Negocios</a></li>
+        <li><a href="#">Sucursales</a></li>
+        <li><a href="#">Proveedores</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Contáctanos -->
+    <div class="footer-col">
+      <h4>Contáctanos</h4>
+      <p><strong>Teléfono sucursal:</strong> +59169052657</p>
+      <p><strong>Consultas:</strong> atencionalcliente@tuempresa.com</p>
+      <p><strong>Atención al cliente:</strong> +59176311374</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 - Tienda de Licores</p>
+  </div>
+</footer>
+
+<script>
+  // Registrar Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('Service Worker registrado:', registration);
+        })
+        .catch(error => {
+          console.log('Error al registrar Service Worker:', error);
+        });
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <header class="menu">
+    <h1>Tienda de Licores</h1>
+    <nav>
+      <ul>
+        <li class="nav-item"><a href="dashboard.html">Inicio</a></li>
+        <li class="nav-item"><a href="catalogo.html">Catálogo</a></li>
+        <li class="nav-item"><a href="inventario.html">Inventario</a></li>
+        <li class="nav-item"><a href="movimientos.html">Movimientos</a></li>
+        <li class="nav-item"><a href="reportes.html">Reportes</a></li>
+        <li class="nav-item"><a href="login.html">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Registrar Producto</h2>
+    <form class="form-inventario">
+      <input type="text" placeholder="Nombre del producto" required>
+      <select>
+        <option>Licores</option>
+        <option>Vinos</option>
+        <option>Cervezas</option>
+        <option>Refrescos</option>
+        <option>Complementos</option>
+      </select>
+      <input type="text" placeholder="Unidad" required>
+      <input type="number" placeholder="Precio unitario(Bs)" required>
+      <button type="submit">Guardar</button>
+    </form>
+
+    <h2>Inventario Actual</h2>
+    <button id="actualizar-inventario">Actualizar Inventario</button>
+
+    <table class="tabla-inventario">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Producto</th>
+          <th>Departamento</th>
+          <th>Unidad</th>
+          <th>Stock</th>
+          <th>Precio unitario(Bs)</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      </tbody>
+    </table>
+  </main>
+  <script>
+  // Registrar Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('Service Worker registrado:', registration);
+        })
+        .catch(error => {
+          console.log('Error al registrar Service Worker:', error);
+        });
+    });
+  }
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{
+  "name": "Tienda de Licores",
+  "short_name": "LicHolic",
+  "description": "Sistema de inventario para tienda de licores",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2c3e50",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/windows/Square44x44Logo.scale-100.png",
+      "sizes": "44x44",
+      "type": "image/png"
+    },
+    {
+      "src": "img/windows/Square44x44Logo.scale-200.png",
+      "sizes": "88x88",
+      "type": "image/png"
+    },
+    {
+      "src": "img/windows/Square44x44Logo.scale-400.png",
+      "sizes": "176x176",
+      "type": "image/png"
+    },
+    {
+      "src": "img/windows/Square150x150Logo.scale-100.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "img/windows/Square150x150Logo.scale-200.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    },
+    {
+      "src": "img/windows/Square150x150Logo.scale-400.png",
+      "sizes": "600x600",
+      "type": "image/png"
+    },
+    {
+      "src": "img/windows/StoreLogo.scale-100.png",
+      "sizes": "50x50",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/windows/StoreLogo.scale-400.png",
+      "sizes": "200x200",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/windows/Square44x44Logo.targetsize-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/windows/LargeTile.scale-400.png",
+      "sizes": "1240x600",
+      "type": "image/png"
+    }
+  ]
+}
